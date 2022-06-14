@@ -2,6 +2,11 @@
 
 This project was created for Reckon.
 
+# BEfore starting the app
+
+### `npm install`
+This will install all the depedencies
+
 ## Available Scripts
 
 In the project directory, you can run:
