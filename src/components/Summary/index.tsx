@@ -8,13 +8,13 @@ function SummaryPage(props: ISummaryPageData) {
     return (
         <div className='summaryContainer'>
             <h2>Summary</h2>
-            <div className='summaryTableSection'>
+            {summaryData.length ? <div className='summaryTableSection'>
                 <RTable
                     rowData={summaryData}
                     rowHeaders={['Stock', 'Starting', 'Lowest', 'Highest', 'Current']}
                     headerKeys={['code', 'startingPrice', 'lowestPrice', 'highestPrice', 'currentPrice']}
                 />
-            </div>
+            </div> : null}
         </div >
     );
 }
