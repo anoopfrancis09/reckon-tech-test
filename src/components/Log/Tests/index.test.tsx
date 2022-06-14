@@ -33,7 +33,7 @@ describe('Log View', () => {
 
         render(<LogPage logsData={logData} isPaused={false} hanldePauseLogs={mockFn} />)
 
-        const button = screen.getByText('Pause Log')
+        const button = screen.getByText('Pause')
 
         await expect(button).toBeInTheDocument()
 
@@ -48,7 +48,7 @@ describe('Log View', () => {
 
         render(<LogPage logsData={logData} isPaused={true} hanldePauseLogs={mockFn} />)
 
-        const button = screen.getByText('Resume Log')
+        const button = screen.getByText('Resume')
 
         await expect(button).toBeInTheDocument()
     });

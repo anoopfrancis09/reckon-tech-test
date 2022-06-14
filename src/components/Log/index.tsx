@@ -27,7 +27,7 @@ function LogPage(props: ILogDataProps) {
         <div className='logsContainer'>
             <div className='titleContainer'>
                 <h2>Log</h2>
-                <Button variant="outlined" style={{ height: 30 }} onClick={hanldePauseLogs}>{isPaused ? 'Resume Log' : 'Pause Log'}</Button>
+                <Button variant="outlined" style={{ height: 30 }} onClick={hanldePauseLogs}>{isPaused ? 'Resume' : 'Pause'}</Button>
             </div>
             {logsData.length ?
                 <div className='logsSection'>
