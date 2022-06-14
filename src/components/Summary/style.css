@@ -1,0 +1,14 @@
+.summaryContainer {
+    min-width: 500px;
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.summaryTableSection {
+    max-height: 750px;
+    border: 2px solid;
+    padding: 20px;
+    overflow: auto;
+}

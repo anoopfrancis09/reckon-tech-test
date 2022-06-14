@@ -1,0 +1,17 @@
+.logsContainer {
+    min-width: 500px;
+    margin: 30px;
+}
+
+.titleContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logsSection {
+    max-height: 750px;
+    border: 2px solid;
+    padding: 20px;
+    overflow: auto;
+}
