@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import Moment from 'moment';
-import get from '../../Network'
+import get from '../../network'
 import { ISummaryData, LogData, StockData } from '../../Types/types';
 import SummaryPage from '../Summary';
 import LogPage from '../Log';

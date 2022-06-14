@@ -10,7 +10,7 @@
 }
 
 .logsSection {
-    max-height: 750px;
+    height: 750px;
     border: 2px solid;
     padding: 20px;
     overflow: auto;

@@ -1,5 +1,5 @@
 import Button from '@mui/material/Button';
-import { ILogDataProps, LogData } from '../../Types/types';
+import { ILogDataProps, LogData } from '../../types';
 import './style.css'
 
 function LogPage(props: ILogDataProps) {
@@ -8,7 +8,7 @@ function LogPage(props: ILogDataProps) {
     const generateLogsView = (eachLog: LogData) => {
         return (
             <>
-                <h4>{`Updates for ${eachLog.time} `}</h4>
+                <h5>{`Updates for ${eachLog.time} `}</h5>
                 {
                     eachLog.logs.map((stockDataLog: string, index) => {
                         return (
