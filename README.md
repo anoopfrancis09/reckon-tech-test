@@ -2,7 +2,7 @@
 
 This project was created for Reckon.
 
-# BEfore starting the app
+# Before starting the app
 
 ### `npm install`
 This will install all the depedencies
