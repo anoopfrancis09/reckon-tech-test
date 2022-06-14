@@ -1,19 +1,20 @@
 import { useEffect, useState } from 'react';
 import Moment from 'moment';
 import get from '../../network'
-import { ISummaryData, LogData, StockData } from '../../Types/types';
+import { ISummaryData, LogData, StockData } from '../../types';
 import SummaryPage from '../Summary';
 import LogPage from '../Log';
+import './style.css'
+import { apiInterval, stockDataURL } from '../../constants';
 
 function Home() {
-
     const [logData, setLogData] = useState<LogData[]>([])
     const [stockData, setStockData] = useState<StockData[]>([])
     const [summaryData, setSummaryData] = useState<ISummaryData[]>([])
     const [isPaused, setIsPaused] = useState<Boolean>(false)
 
     const getStockData = () => {
-        get('https://join.reckon.com/stock-pricing')
+        get(stockDataURL)
             .then(function (data) {
                 if (data.length) {
                     setStockData(data)
@@ -26,7 +27,7 @@ function Home() {
         const time = Moment().format('YYYY-MM-DD hh:mm:ss')
         const currentLog = stockData.map(stock => `${stock.code}: $${stock.price}`)
 
-        setLogData([...logData, { time, logs: currentLog }])
+        setLogData([{ time, logs: currentLog }, ...logData,])
     }
 
     const generateSummaryData = () => {
@@ -56,7 +57,7 @@ function Home() {
     }
 
     useEffect(() => {
-        const timer = setInterval(() => getStockData(), 2000);
+        const timer = setInterval(() => getStockData(), apiInterval);
 
         return () => {
             clearInterval(timer);
@@ -64,7 +65,6 @@ function Home() {
     })
 
     useEffect(() => {
-
         if (stockData.length) {
             if (!isPaused) {
                 generateLogData()
@@ -80,7 +80,7 @@ function Home() {
     }
 
     return (
-        <div style={{ display: 'flex' }}>
+        <div className='mainContainer'>
             <LogPage logsData={logData} isPaused={isPaused} hanldePauseLogs={handlePauseLogs} />
             <SummaryPage summaryData={summaryData} />
         </div >

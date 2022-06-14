@@ -1,4 +1,4 @@
-import { StockData } from "./Types/types";
+import { StockData } from "./types";
 
 // Cheks the incoming data for matching StockData type
 export const isStockData = (data: any): data is Array<StockData> => {

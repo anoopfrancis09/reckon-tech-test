@@ -1,4 +1,4 @@
-import { ISummaryPageData } from '../../Types/types';
+import { ISummaryPageData } from '../../types';
 import RTable from '../Common/table';
 import './style.css'
 
